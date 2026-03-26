@@ -14,7 +14,6 @@ export class SoundscapeEngine {
   private lfo: OscillatorNode | null = null;
   private lfoGain: GainNode | null = null;
   private isPlaying = false;
-  private fadeInterval: ReturnType<typeof setInterval> | null = null;
 
   async start(params: StateInterpretation["audioParams"]) {
     if (this.isPlaying) {

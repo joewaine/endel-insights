@@ -49,8 +49,6 @@ export function SoundPanel({ interpretation }: Props) {
 
     const width = canvas.offsetWidth;
     const height = canvas.offsetHeight;
-    const color = MODE_COLORS[interpretation.soundscapeMode] || "#6B8AFF";
-
     let time = 0;
 
     function draw() {

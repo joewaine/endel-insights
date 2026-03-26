@@ -1,8 +1,12 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 import Anthropic from "@anthropic-ai/sdk";
 import dotenv from "dotenv";
 import type { OuraData, StateInterpretation } from "../src/types/index.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 dotenv.config({ override: true });
 
@@ -317,6 +321,13 @@ app.get("/api/insights", async (req, res) => {
     console.error("Error generating insights:", err);
     res.status(500).json({ error: "Failed to generate insights" });
   }
+});
+
+// Serve built frontend in production
+const distPath = path.join(__dirname, "..", "dist");
+app.use(express.static(distPath));
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
 });
 
 const PORT = process.env.PORT || 3001;
