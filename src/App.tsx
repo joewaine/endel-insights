@@ -18,49 +18,37 @@ function IntroModal({ onClose }: { onClose: () => void }) {
         <div className="modal-body">
           <h2 className="modal-title">What is Endel?</h2>
           <p>
-            Endel creates AI-powered soundscapes that adapt in real time to your
-            body and environment. Using inputs like heart rate, time of day, and
-            motion, their patented sound engine generates personalized audio for
-            focus, sleep, relaxation, and recovery. It's not a playlist — it's a
-            living system that responds to you.
+            Endel makes AI-powered soundscapes that adapt to your body in real
+            time — using heart rate, motion, time of day, etc. Not a playlist.
+            A living system that responds to you.
           </p>
 
-          <h2 className="modal-title">The gap</h2>
+          <h2 className="modal-title">The problem</h2>
           <p>
-            Endel's personalization engine is doing real work under the hood —
-            but users can't see it. When a soundscape shifts, there's no way to
-            know if it's responding to your biometrics or just cycling through
-            variations. The most common user feedback: "I can't tell if it's
-            actually personalized." The intelligence is real. The visibility
-            isn't.
+            The personalization is real, but users can't see it. When the sound
+            shifts, there's no way to know if it's responding to you or just
+            doing its thing. Most common feedback: "I can't tell if it's
+            actually personalized."
           </p>
 
-          <h2 className="modal-title">What this demo explores</h2>
+          <h2 className="modal-title">What this does</h2>
           <p>
-            Endel Insights makes the personalization layer visible. It pulls your
-            real biometric data from an Oura Ring, interprets your physical state
-            in plain language, explains exactly why a specific soundscape was
-            chosen for you, and then plays it — all on one screen.
-          </p>
-          <p>
-            The idea is that explainability isn't just transparency — it's a
-            product feature. When users can see why the sound was chosen for
-            them, trust deepens, engagement increases, and a feedback loop
-            becomes possible.
+            This demo makes the personalization visible. It reads your Oura Ring
+            data, interprets your physical state, explains why a soundscape was
+            chosen, and plays it — all on one screen. Explainability as a
+            feature, not just transparency.
           </p>
 
-          <h2 className="modal-title">Who built this</h2>
+          <h2 className="modal-title">Who made this</h2>
           <p>
             I'm{" "}
             <a href="https://joewaine.com" target="_blank" rel="noopener">
               Joseph Waine
             </a>{" "}
-            — a full-stack engineer and musician, currently in an AI accelerator
-            in Brooklyn. I previously built Aletheia, an AI meditation system
-            that uses Oura Ring biometrics, a local LLM, and ElevenLabs voice
-            synthesis to generate personalized therapeutic sessions. Endel sits
-            at the intersection of everything I care about — AI, music, wellness,
-            and making technology that helps people feel better.
+            — full-stack engineer and musician, in an AI accelerator in Brooklyn.
+            Previously built Aletheia, an AI meditation system using Oura
+            biometrics and voice synthesis. Endel sits right at the intersection
+            of AI, music, and wellness — everything I care about.
           </p>
         </div>
 
