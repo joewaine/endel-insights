@@ -56,7 +56,7 @@ function MetricRing({
           x="36"
           y="48"
           textAnchor="middle"
-          fill="rgba(255,255,255,0.4)"
+          fill="#ffffff"
           fontSize="8"
           style={{ textTransform: "uppercase" }}
         >
@@ -76,17 +76,17 @@ export function StatePanel({ oura, interpretation }: Props) {
         <MetricRing
           value={oura.readiness.score}
           label="Ready"
-          color="rgba(255, 255, 255, 0.9)"
+          color="#ffffff"
         />
         <MetricRing
           value={oura.sleep.score}
           label="Sleep"
-          color="rgba(255, 255, 255, 0.6)"
+          color="#ffffff"
         />
         <MetricRing
           value={oura.activity.score}
           label="Active"
-          color="rgba(255, 255, 255, 0.35)"
+          color="#ffffff"
         />
       </div>
 

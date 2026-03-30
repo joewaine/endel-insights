@@ -11,7 +11,7 @@
   --surface: #0a0a0a;
   --surface-border: rgba(255, 255, 255, 0.08);
   --text: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.5);
+  --text-muted: #ffffff;
   --text-dim: rgba(255, 255, 255, 0.25);
   --accent: #ffffff;
 }
@@ -121,7 +121,7 @@ body {
 .modal-body p {
   font-size: 13px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
@@ -442,7 +442,7 @@ body {
 .sound-reasoning {
   font-size: 13px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
   font-weight: 400;
   margin-bottom: 20px;
 }
