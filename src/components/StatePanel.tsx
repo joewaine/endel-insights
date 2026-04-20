@@ -44,7 +44,7 @@ function MetricRing({
         />
         <text
           x="36"
-          y="36"
+          y="32"
           textAnchor="middle"
           dominantBaseline="central"
           fill="#FFFFFF"
@@ -55,8 +55,9 @@ function MetricRing({
         </text>
         <text
           x="36"
-          y="56"
+          y="46"
           textAnchor="middle"
+          dominantBaseline="central"
           fill="rgba(255, 255, 255, 0.75)"
           fontSize="7"
           fontFamily="Inter, sans-serif"
