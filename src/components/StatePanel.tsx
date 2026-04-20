@@ -26,8 +26,8 @@ function MetricRing({
           cy="36"
           r={radius}
           fill="none"
-          stroke="rgba(255,255,255,0.06)"
-          strokeWidth="4"
+          stroke="rgba(255, 255, 255, 0.15)"
+          strokeWidth="2"
         />
         <circle
           cx="36"
@@ -35,29 +35,33 @@ function MetricRing({
           r={radius}
           fill="none"
           stroke={color}
-          strokeWidth="4"
+          strokeWidth="2"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          strokeLinecap="round"
+          strokeLinecap="butt"
           transform="rotate(-90 36 36)"
           style={{ transition: "stroke-dashoffset 1.5s ease" }}
         />
         <text
           x="36"
-          y="34"
+          y="36"
           textAnchor="middle"
-          fill="white"
-          fontSize="16"
-          fontWeight="300"
+          dominantBaseline="central"
+          fill="#FFFFFF"
+          fontSize="22"
+          fontFamily="Instrument Serif, serif"
         >
           {value}
         </text>
         <text
           x="36"
-          y="48"
+          y="56"
           textAnchor="middle"
-          fill="#ffffff"
-          fontSize="8"
+          fill="rgba(255, 255, 255, 0.75)"
+          fontSize="7"
+          fontFamily="Inter, sans-serif"
+          fontWeight="700"
+          letterSpacing="0.15em"
           style={{ textTransform: "uppercase" }}
         >
           {label}
@@ -76,17 +80,17 @@ export function StatePanel({ oura, interpretation }: Props) {
         <MetricRing
           value={oura.readiness.score}
           label="Ready"
-          color="#ffffff"
+          color="#FFFFFF"
         />
         <MetricRing
           value={oura.sleep.score}
           label="Sleep"
-          color="#ffffff"
+          color="#FFFFFF"
         />
         <MetricRing
           value={oura.activity.score}
           label="Active"
-          color="#ffffff"
+          color="#FFFFFF"
         />
       </div>
 

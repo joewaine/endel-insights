@@ -8,9 +8,9 @@ interface Props {
 
 const MODE_COLORS: Record<string, string> = {
   recovery: "rgba(255, 255, 255, 0.5)",
-  relax: "rgba(255, 255, 255, 0.4)",
-  focus: "rgba(255, 255, 255, 0.7)",
-  deep_focus: "rgba(255, 255, 255, 0.9)",
+  relax: "rgba(255, 255, 255, 0.65)",
+  focus: "rgba(255, 255, 255, 0.85)",
+  deep_focus: "#FFFFFF",
 };
 
 const MODE_LABELS: Record<string, string> = {
@@ -58,8 +58,8 @@ export function SoundPanel({ interpretation }: Props) {
       if (!isPlaying) {
         // Static gentle wave when not playing
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(255, 255, 255, 0.08)`;
-        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = `rgba(255, 255, 255, 0.35)`;
+        ctx.lineWidth = 1;
         for (let x = 0; x < width; x++) {
           const y =
             height / 2 + Math.sin(x * 0.015) * 8;
@@ -72,12 +72,17 @@ export function SoundPanel({ interpretation }: Props) {
 
       time += interpretation.audioParams.modulationSpeed * 0.3;
 
+      const waveColors = [
+        "rgba(255, 255, 255, 0.9)",
+        "rgba(255, 255, 255, 0.5)",
+        "rgba(255, 255, 255, 0.25)",
+      ];
+
       // Multiple layered waves
       for (let layer = 0; layer < 3; layer++) {
         ctx.beginPath();
-        const alpha = 0.25 - layer * 0.07;
-        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-        ctx.lineWidth = 2 - layer * 0.5;
+        ctx.strokeStyle = waveColors[layer];
+        ctx.lineWidth = 1.2 - layer * 0.25;
 
         for (let x = 0; x < width; x++) {
           const freq = 0.008 + layer * 0.003;
@@ -91,20 +96,6 @@ export function SoundPanel({ interpretation }: Props) {
         }
         ctx.stroke();
       }
-
-      // Center glow
-      const gradient = ctx.createRadialGradient(
-        width / 2,
-        height / 2,
-        0,
-        width / 2,
-        height / 2,
-        80
-      );
-      gradient.addColorStop(0, `rgba(255, 255, 255, 0.06)`);
-      gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
 
       animationRef.current = requestAnimationFrame(draw);
     }
